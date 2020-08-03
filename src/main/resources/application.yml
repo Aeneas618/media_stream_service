@@ -1,0 +1,28 @@
+server:
+  port: 9090
+#jdbc
+spring:
+  datasource:
+    url: jdbc:mysql://172.21.25.41:3306/media_server
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: WEB-INF/**
+  freemarker:
+    cache: false
+#mybatis
+mybatis:
+  type-aliases-package: com.fokantech.pojo
+logging:
+#  file: ./log/media_stream.log
+  level:
+    com.fokantech: debug
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true
